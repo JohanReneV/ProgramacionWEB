@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aqua;
+}
+
+#container{
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "publicidad noticias aside"
+    "footer footer aside"
+    ;
+
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    height: 80%;
+}
+
+header{
+    grid-area: header;
+}
+
+#publish{
+    grid-area: publicidad;
+}
+#news{
+    grid-area: noticias;
+}
+aside{
+    grid-area: aside;
+}
+footer{
+    grid-area: footer;
+}
+.border{
+    border: solid black;
+}

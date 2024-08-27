@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aliceblue;
+}
+
+#container{
+    display: grid;
+    grid-template-areas: 
+    "nav header header"
+    "nav productos aside"
+    "nav servicios aside"
+    "nav footer footer"
+    ;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}

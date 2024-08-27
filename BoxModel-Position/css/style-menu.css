@@ -1,0 +1,29 @@
+body{
+    background-image: url("../img/fondo-servilleta.jpg");
+}
+
+#container{
+    padding: 10px;
+    width: 40vw;    
+    margin-left: 30vw;
+    margin-top: 60px;
+    height: 200vh;
+    background-color: azure;
+    box-shadow: 10px 10px 20px black;
+}
+
+#title{
+    position: sticky;
+    top: 5px;
+    background-color: brown;
+    width: 200px;
+    font-size: 40px;    
+    color: yellow;
+}
+
+#hamburger{
+    max-width: 50%;
+    border-radius: 50%;
+    margin-left: 45%;
+    margin-top: 50px;
+}
