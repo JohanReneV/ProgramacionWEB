@@ -106,3 +106,33 @@ h3 {
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+/*Flechas a los Costados*/
+
+.arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: white;
+    font-size: 3rem;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+/* Flecha izquierda */
+.left-arrow {
+    left: 20px;
+}
+
+/* Flecha derecha */
+.right-arrow {
+    right: 20px;
+}
+
+/* Efecto hover para ambas flechas */
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
