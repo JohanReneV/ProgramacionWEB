@@ -1,0 +1,108 @@
+body {
+    font-family: cursive;
+    margin: 0;
+    padding: 0;
+    background-image: url("/Proyecto_HojaDeVida/Img/Fondo_CV.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #000000;
+}
+
+/*Para Crear el overlay semi-transparente en el documento*/
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+.resume-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #333;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.header h2 {
+    margin: 5px 0;
+    font-size: 1.5em;
+    color: #3e25a3;
+}
+
+.profile, 
+.experience, 
+.education, 
+.skills, 
+.contact {
+    margin-bottom: 20px;
+}
+
+.profile p, 
+.experience p, 
+.education p, 
+.contact p {
+    margin: 5px 0;
+}
+
+h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    color: #3e25a3;
+}
+
+.job, .degree {
+    margin-bottom: 15px;
+}
+
+.job h4, .degree h4,
+.job h5, .degree h5,
+.job h6, .degree h6 {
+    font-size: 1.5em;
+    margin: 5px 0;
+    color: #3e25a3;
+}
+
+.degree h4, .degree h5,.degree h6,¨{
+    color: #3e25a3;
+}
+
+
+
+/*Flexbox en listas de skills*/
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    flex: 1 1 45%;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #efefef;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
