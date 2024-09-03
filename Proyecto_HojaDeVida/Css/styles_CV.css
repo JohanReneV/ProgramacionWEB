@@ -26,7 +26,7 @@ body::before {
     max-width: 900px;
     margin: 20px auto;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 4px 4px 4px #000000;
     background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -95,7 +95,7 @@ h3 {
     list-style: none;
     padding: 0;
 }
-
+/*Propiedades de li dentro de skills*/
 .skills-list li {
     flex: 1 1 45%;
     margin-bottom: 10px;
@@ -122,17 +122,53 @@ h3 {
     transition: background-color 0.3s;
 }
 
-/* Flecha izquierda */
+/*Tamaños de las flechas*/
 .left-arrow {
     left: 20px;
 }
 
-/* Flecha derecha */
 .right-arrow {
     right: 20px;
 }
-
-/* Efecto hover para ambas flechas */
+/*Color de las flechas*/
 .arrow:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+/* Cambios responsividad para dispositivos moviles*/
+@media (max-width: 767px) {
+    .resume-container {
+        padding: 15px;
+        box-shadow: none; /* Sombra */
+        margin: 10px;
+    }
+
+    .header h1 {
+        font-size: 2em; /* tamaño de titulo */
+    }
+
+    .header h2 {
+        font-size: 1.2em; /* tamaño de subtitulo */
+    }
+
+    h3 {
+        font-size: 1.5em; /* tamaño de encabezado */
+    }
+
+    .job h4, .degree h4,
+    .job h5, .degree h5,
+    .job h6, .degree h6 {
+        font-size: 1.3em; /* tamaño de etiquetas "trabajos y títulos" */
+    }
+
+    .skills-list li {
+        flex: 1 1 100%; /* Alinea las habilidades en una columna */
+        margin-bottom: 8px;
+        padding: 8px;
+    }
+
+    .arrow {
+        font-size: 2.5rem; /* Reduce el tamaño de las flechas */
+    }
+}
+

@@ -20,7 +20,7 @@ html {
 .card {
     border: 1px;
     border-radius: 9px;
-    box-shadow: 4px 8px 9px rgba(118, 15, 15, 0.1);
+    filter: drop-shadow(4px 4px 4px 4px #000); 
     padding: 2rem;
     width: 100%;
     max-width: 420px;
@@ -28,14 +28,16 @@ html {
 }
 
 
-
+/*propiedades de image dentro de card*/
 .card-image {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     margin-bottom: 2rem;
+    filter: drop-shadow(4px 4px 4px 4px #000); 
 }
 
+/*propiedades de button dentro del sign*/
 .sign-in-button {
     color: rgb(5, 5, 5);
     border: none;
@@ -51,4 +53,22 @@ html {
 
 .sign-in-button:hover {
     background-color: #3a7bc8;
+}
+
+/*Cambios para responsividad en dispositivos moviles*/
+
+@media (max-width: 600px) {
+    .card {
+        width: 90%; /* tamaño de tarjetas */
+    }
+
+    .sign-in-button {
+        font-size: 1rem; /* tamaño de botones */
+        padding: 0.8rem 1.5rem; /* ajuste de padding pantalla */
+    }
+
+    .card-image {
+        width: 150px; /* Reduccion de imagen mas pequeña */
+        height: 150px;
+    }
 }
