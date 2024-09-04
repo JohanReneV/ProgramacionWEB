@@ -1,32 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página con Grid</title>
-    <link rel="stylesheet" href="/Proyecto_HojaDeVida/Css/G_P.css"> <!-- Archivo CSS externo -->
+    <title>Gustos y Pasatiempos</title>
+    <link rel="stylesheet" href="/Proyecto_HojaDeVida/Css/G_P.css">
 </head>
+
 <body>
 
     <div class="grid-container">
-        <!-- Primera Parte: Imagen 1 -->
         <div class="grid-item image1">
-            <img src="imagen1.jpg" alt="Imagen 1">
+            <img src="/Proyecto_HojaDeVida/Img/img1.jpg" alt="Imagen1">
+            <div class="overlay">
+                <p>Texto al pasar sobre la imagen</p>
+            </div>
         </div>
 
-        <!-- Segunda Parte: Imagen 2 -->
         <div class="grid-item image2">
-            <img src="imagen2.jpg" alt="Imagen 2">
+            <img src="/Proyecto_HojaDeVida/Img/img2.jpg" alt="Imagen2">
+            <div class="overlay">
+                <p>Texto al pasar sobre la imagen</p>
+            </div>
         </div>
 
-        <!-- Tercera Parte: Video -->
-        <div class="grid-item video">
+        <div class="grid-item image3">
+            <img src="/Proyecto_HojaDeVida/Img/img3.jpeg" alt="Imagen3">
+            <div class="overlay">
+                <p>Texto al pasar sobre la imagen</p>
+            </div>
+        </div>
+
+        <div class="grid-item image4">
+            <img src="/Proyecto_HojaDeVida/Img/img4.jpeg" alt="Imagen4">
+            <div class="overlay">
+                <p>Texto al pasar sobre la imagen</p>
+            </div>
+        </div>
+
+        <div class="grid-item video1">
             <video controls>
-                <source src="video.mp4" type="video/mp4">
+                <source src="/Proyecto_HojaDeVida/Videos/video1.mp4" type="video/mp4">
                 Tu navegador no soporta la etiqueta de video.
             </video>
         </div>
+
     </div>
 
+    
+    <footer class="footer">
+        <div class="footer-menu">
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </div>
+        <p>© 2024 Mi Página. Todos los derechos reservados.</p>
+    </footer>
+    
+
 </body>
+
 </html>

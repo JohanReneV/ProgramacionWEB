@@ -48,7 +48,7 @@ html {
     width: 100%;
     transition: background-color 0.3s ease;
     opacity: 0.9;
-    font-family: cursive;
+    font-family: Arial, sans-serif;;
 }
 
 .sign-in-button:hover {
