@@ -26,7 +26,6 @@ html {
     width: 100%;
     max-width: 420px;
     text-align: center;
-    backdrop-filter: blur(20px);
 }
 
 
@@ -58,14 +57,13 @@ html {
 }
 
 /*Cambios para responsividad en dispositivos moviles*/
-
 @media (max-width: 600px) {
     .card {
-        width: 90%; /* tamaño de tarjetas */
+        width: 90%; /* tamaño de tarjeta */
     }
 
     .sign-in-button {
-        font-size: 1rem; /* tamaño de botones */
+        font-size: 1rem; /* tamaño de botone */
         padding: 0.8rem 1.5rem; /* ajuste de padding pantalla */
     }
 
