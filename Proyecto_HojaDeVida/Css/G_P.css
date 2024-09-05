@@ -3,10 +3,13 @@ html {
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 100%;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     background-color: lightgray;
+    overflow-x: hidden;
+    font-family: cursive;
 }
 
 .content {
@@ -90,7 +93,7 @@ html {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
     width: 100%;
     position: relative;
     bottom: 0;
@@ -120,6 +123,7 @@ html {
 
 .footer-menu ul li a:hover {
     text-decoration: underline;
+    color: blue;
 }
 
 /*Recursividad para otros dispositivos*/
