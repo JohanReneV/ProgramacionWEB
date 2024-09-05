@@ -1,0 +1,11 @@
+h1{
+    font-size: 3rem;
+}
+
+h1:hover{
+    color: aqua;
+}
+
+h1:hover::first-letter{
+    font-size: 6rem;
+}
