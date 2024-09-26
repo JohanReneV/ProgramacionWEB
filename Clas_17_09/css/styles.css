@@ -1,0 +1,22 @@
+ul {
+  list-style-type: none;
+}
+ul li {
+  display: inline-block;
+  margin-right: 30px;
+  box-shadow: 5px 5px 10px black;
+  width: 180px;
+  text-align: center;
+}
+ul li a {
+  text-decoration: none;
+}
+ul li:hover {
+  background-color: red;
+}
+
+body {
+  background-color: rgb(6, 239, 239);
+}
+
+/*# sourceMappingURL=styles.css.map */

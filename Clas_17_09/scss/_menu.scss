@@ -1,0 +1,16 @@
+ul{
+    list-style-type:  none;
+    li{
+        display: inline-block;
+        margin-right: 30px;
+        box-shadow: $sombra;
+        width: $boton-width+100px;
+        text-align: center;
+        a{
+            text-decoration: none;
+        }
+        &:hover{
+            background-color: $color-rojo;
+        }
+    }
+}

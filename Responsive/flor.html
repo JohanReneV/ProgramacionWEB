@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flor Amarilla Animada</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e0f7fa;
+            margin: 0;
+        }
+        .flor {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            animation: rotate 10s infinite linear;
+        }
+        .petalo {
+            position: absolute;
+            width: 70px;
+            height: 30px;
+            background-color: yellow;
+            border-radius: 35px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            animation: bounce 1.5s infinite alternate;
+        }
+        .tallo {
+            position: absolute;
+            width: 10px;
+            height: 80px;
+            background-color: green;
+            left: 45px;
+            top: 100px;
+            border-radius: 5px;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="flor" id="flor"></div>
+    <div class="tallo"></div>
+    
+    <script>
+        const flor = document.getElementById('flor');
+        const petaloCount = 4;
+        const angles = [45, -45, 135, -135];
+
+        for (let i = 0; i < petaloCount; i++) {
+            const petalo = document.createElement('div');
+            petalo.classList.add('petalo');
+            petalo.style.transform = `rotate(${angles[i]}deg)`;
+            petalo.style.position = 'absolute';
+            petalo.style.top = i % 2 === 0 ? '-15px' : '70px';
+            petalo.style.left = i < 2 ? '15px' : '70px';
+            flor.appendChild(petalo);
+        }
+    </script>
+</body>
+</html>
