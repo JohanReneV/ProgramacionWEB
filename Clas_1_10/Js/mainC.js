@@ -1,5 +1,15 @@
 function appendToDisplay(value) {
-    document.getElementById("display").value += value;
+    let display = document.getElementById("display");
+    let currentValue = display.value;
+
+    if (value === ".") {
+        let parts = currentValue.split(/[\+\-\*\/]/);
+        let lastPart = parts[parts.length - 1];
+        if (lastPart.includes(".")) {
+            return;
+        }
+    }
+    display.value += value;
 }
 
 function clearDisplay() {
