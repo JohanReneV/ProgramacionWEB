@@ -1,0 +1,13 @@
+#image-movie{
+    height: 150px;
+    border-radius: 40px;
+}
+
+Header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding-top: 30px;
+}
