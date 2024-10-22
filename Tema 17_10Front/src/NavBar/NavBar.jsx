@@ -23,7 +23,7 @@ const NavBar = () => {
                 <Button variant="contained" style={{ marginRight: '10px' }}>Inicio</Button>
             </Link>
 
-            {/* Botón desplegable para Personajes */}
+            {}
             <Button
                 variant="contained"
                 onClick={handleClick}
@@ -37,10 +37,10 @@ const NavBar = () => {
                 onClose={handleClose}
             >
                 <MenuItem onClick={handleClose}>
-                    <Link to={"/characters"}>Humanos</Link>
+                    <Link to={"/humans"}>Humanos</Link>
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
-                    <Link to={"/characters"}>Aliens</Link>
+                    <Link to={"/aliens"}>Aliens</Link>
                 </MenuItem>
             </Menu>
 

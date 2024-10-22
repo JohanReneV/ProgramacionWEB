@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import './character.css';
 
-
-const CharactersPage = () => {
-  const [characters, setCharacters] = useState([]);
+const HumansPage = () => {
+  const [humans, setHumans] = useState([]);
 
   useEffect(() => {
-    // Función para obtener los personajes
     const fetchCharacters = async () => {
       try {
-        const response = await fetch('https://rickandmortyapi.com/api/character');
+        const response = await fetch('https://rickandmortyapi.com/api/character/?species=Human');
         const data = await response.json();
-        setCharacters(data.results);
+        setHumans(data.results);
       } catch (error) {
-        console.error('Error fetching characters:', error);
+        console.error('Error fetching human characters:', error);
       }
     };
 
@@ -22,9 +19,9 @@ const CharactersPage = () => {
 
   return (
     <div>
-      <h1>Rick and Morty Characters</h1>
+      <h1>Human Characters</h1>
       <div className="character-container">
-        {characters.map((character) => (
+        {humans.map((character) => (
           <div key={character.id} className="character-card">
             <img src={character.image} alt={character.name} />
             <h3>{character.name}</h3>
@@ -33,7 +30,6 @@ const CharactersPage = () => {
       </div>
     </div>
   );
-
 };
 
-export default CharactersPage;
+export default HumansPage;
