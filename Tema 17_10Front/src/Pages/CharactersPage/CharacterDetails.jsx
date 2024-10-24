@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import CircularProgress from '@mui/material/CircularProgress';
 import axios from 'axios';
-import './CharacterDetails.css';
+import CircularProgress from '@mui/material/CircularProgress';
+import './CharacterList.css';
 
-const CharacterDetails = () => {
-  const { id } = useParams();
-  const [character, setCharacter] = useState(null);
+const CharacterList = () => {
+  const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
-    const fetchCharacter = async () => {
+    const fetchCharacters = async () => {
+      setLoading(true);
       try {
-        const response = await axios.get(`https://rickandmortyapi.com/api/character/${id}`);
-        setCharacter(response.data);
+        const response = await axios.get(`https://rickandmortyapi.com/api/character?page=${page}`);
+        setCharacters(response.data.results);
+        setTotalPages(response.data.info.pages); // Total de páginas
         setLoading(false);
       } catch (error) {
         setError('Error fetching character data');
@@ -22,8 +24,20 @@ const CharacterDetails = () => {
       }
     };
 
-    fetchCharacter();
-  }, [id]);
+    fetchCharacters();
+  }, [page]);
+
+  const handleNextPage = () => {
+    if (page < totalPages) {
+      setPage(page + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
 
   if (loading) {
     return <div className="loading"><CircularProgress /></div>;
@@ -33,21 +47,24 @@ const CharacterDetails = () => {
     return <div className="error">{error}</div>;
   }
 
-  if (!character) {
-    return <div>No se encontraron detalles del personaje.</div>;
-  }
-
   return (
-    <div className="character-details-page">
-      <h1>{character.name}</h1>
-      <img src={character.image} alt={character.name} className="character-image" />
-      <p><strong>Especie:</strong> {character.species}</p>
-      <p><strong>Género:</strong> {character.gender}</p>
-      <p><strong>Estado:</strong> {character.status}</p>
-      <p><strong>Origen:</strong> {character.origin.name}</p>
-      <p><strong>Ubicación actual:</strong> {character.location.name}</p>
+    <div className="character-list">
+      <h1>Personajes</h1>
+      <div className="characters">
+        {characters.map(character => (
+          <div key={character.id} className="character-card">
+            <h2>{character.name}</h2>
+            <img src={character.image} alt={character.name} />
+          </div>
+        ))}
+      </div>
+      <div className="pagination">
+        <button onClick={handlePreviousPage} disabled={page === 1}>Anterior</button>
+        <span>Página {page} de {totalPages}</span>
+        <button onClick={handleNextPage} disabled={page === totalPages}>Siguiente</button>
+      </div>
     </div>
   );
 };
 
-export default CharacterDetails;
+export default CharacterList;
