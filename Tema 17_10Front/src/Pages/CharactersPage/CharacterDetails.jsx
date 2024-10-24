@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import CircularProgress from '@mui/material/CircularProgress';
+import axios from 'axios';
 import './CharacterDetails.css';
 
 const CharacterDetails = () => {
@@ -10,16 +11,18 @@ const CharacterDetails = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`https://rickandmortyapi.com/api/character/${id}`)
-      .then(response => response.json())
-      .then(data => {
-        setCharacter(data);
+    const fetchCharacter = async () => {
+      try {
+        const response = await axios.get(`https://rickandmortyapi.com/api/character/${id}`);
+        setCharacter(response.data);
         setLoading(false);
-      })
-      .catch(error => {
+      } catch (error) {
         setError('Error fetching character data');
         setLoading(false);
-      });
+      }
+    };
+
+    fetchCharacter();
   }, [id]);
 
   if (loading) {
@@ -37,7 +40,7 @@ const CharacterDetails = () => {
   return (
     <div className="character-details-page">
       <h1>{character.name}</h1>
-      <img src={character.image} alt={character.name} className="character-image"/>
+      <img src={character.image} alt={character.name} className="character-image" />
       <p><strong>Especie:</strong> {character.species}</p>
       <p><strong>Género:</strong> {character.gender}</p>
       <p><strong>Estado:</strong> {character.status}</p>

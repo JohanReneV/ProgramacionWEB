@@ -22,6 +22,7 @@ const AboutPage = () => {
       <ul>
         <li>React</li>
         <li>Vite</li>
+        <li>Axios</li>
         <li>API de Rick and Morty</li>
         <li>Material UI</li>
         <li>CSS Flexbox para diseño responsivo</li>

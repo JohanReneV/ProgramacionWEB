@@ -11,7 +11,7 @@ const Header = () => {
         <h1>Rick Sanchez</h1>
         <p>Movie App</p>
         <NavBar />
-    </header>
+      </header>
   )
 }
 
