@@ -1,5 +1,5 @@
 #image-movie{
-    height: 150px;
+    height: 200px;
     border-radius: 40px;
 }
 
@@ -10,4 +10,8 @@ Header{
     background-color: black;
     color: white;
     padding-top: 30px;
+}
+
+Divheader{
+    position: sticky;
 }
