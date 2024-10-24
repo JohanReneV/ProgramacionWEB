@@ -1,9 +1,12 @@
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 15px;
-    padding: 10px;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+
+.nav-button {
+  width: 120px;
+}

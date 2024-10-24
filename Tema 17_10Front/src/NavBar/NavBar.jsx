@@ -6,46 +6,23 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
-    const [anchorEl, setAnchorEl] = useState(null);
-    const open = Boolean(anchorEl);
-
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
 
     return (
         <nav>
             <Link to={"/"}>
-                <Button variant="contained" style={{ marginRight: '10px' }}>Inicio</Button>
+                <Button variant="contained" className="nav-button">Inicio</Button>
             </Link>
-
-            {}
-            <Button
-                variant="contained"
-                onClick={handleClick}
-                style={{ marginRight: '10px' }}
-            >
-                Personajes
-            </Button>
-            <Menu
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-            >
-                <MenuItem onClick={handleClose}>
-                    <Link to={"/humans"}>Humanos</Link>
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                    <Link to={"/aliens"}>Aliens</Link>
-                </MenuItem>
-            </Menu>
-
+            <Link to={"/Characters"}>
+                <Button variant="contained" className="nav-button">Personajes</Button>
+            </Link>
+            <Link to={"/humans"}>
+                <Button variant="contained" className="nav-button">Humanos</Button>
+            </Link>
+            <Link to={"/aliens"}>
+                <Button variant="contained" className="nav-button">Aliens</Button>
+            </Link>
             <Link to={"/about"}>
-                <Button variant="contained">Acerca De</Button>
+                <Button variant="contained" className="nav-button">Acerca De</Button>
             </Link>
         </nav>
     );

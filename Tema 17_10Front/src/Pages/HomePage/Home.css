@@ -8,7 +8,7 @@
     width: 300px;
     margin-bottom: 20px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #faf9f9;
   }
   
   .character-list {
@@ -23,7 +23,6 @@
     display: flex;
     align-items: center;
     margin: 10px;
-    border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
     width: 250px;
