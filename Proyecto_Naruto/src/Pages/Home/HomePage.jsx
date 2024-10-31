@@ -111,16 +111,16 @@ const HomePage = () => {
         ))}
       </div>
       <div className="pagination">
-        <button 
-          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))} 
+        <button
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
           aria-label="Página anterior"
         >
           Anterior
         </button>
         <span>Página {currentPage} de {totalPages}</span>
-        <button 
-          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))} 
+        <button
+          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
           disabled={currentPage === totalPages}
           aria-label="Siguiente página"
         >
@@ -141,7 +141,7 @@ const HomePage = () => {
           </div>
         </div>
       )}
-      
+
     </div>
   );
 };
